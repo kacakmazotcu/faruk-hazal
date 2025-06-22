@@ -4,12 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById("music");
     if (btn && audio) {
         btn.addEventListener("click", function () {
-            if (audio.paused) {
-                audio.currentTime = 30; // Start from 30 seconds
-                audio.play();
-            } else {
-                audio.pause();
-            }
+            audio.play().then(() => {
+                audio.currentTime = 30;
+            }).catch(e => console.log("Playback error:", e));
         });
     }
 });
