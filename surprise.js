@@ -1,0 +1,1 @@
+function surprise() { alert('Surprise!'); }

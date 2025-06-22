@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faruk ❤︎ Hazal</title>
+<style>
+    
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  background: #1a1a2e;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      padding: 2rem 1rem;
+    }
+    .top-image, .bottom-image {
+      text-align: center;
+      width: 100%;
+      max-width: 700px;
+    }
+    .top-image img, .bottom-image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .caption {
+      font-size: 1.2rem;
+      
+      margin-top: 1rem;
+    }
+    .slider-group {
+      max-width: 400px;
+      width: 100%;
+    }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      gap: 1rem;
+    }
+    .slider img {
+      max-height: 85vh;
+      object-fit: contain;
+      width: 100%;
+      flex: 0 0 100%;
+      border-radius: 10px;
+      scroll-snap-align: start;
+    }
+    .note {
+      text-align: center;
+      margin-top: 1rem;
+      
+    }
+  
+.map-banner {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.map-banner img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+}
+.map-caption {
+  margin-top: 1.5rem;
+  font-family: 'Libre Baskerville', serif;
+}
+.map-caption .main-line {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.map-caption .sub-line {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+
+
+  .letter-section { text-align: center; margin: 3rem 0; }
+  #envelope { width: 180px; cursor: pointer; transition: transform .4s; }
+  #envelope.open { transform: translateY(-10px) rotate(-3deg); }
+  #letter {
+    display: none;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    background: #d7ecff;
+    color: #111;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.6;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  }
+  #letter.show { display: block; }
+
+
+
+  .besiktas-corner {
+    position: fixed;
+    bottom: 30px;
+    right: 120px;
+    width: 160px;
+    z-index: 999;
+  }
+  .besiktas-corner img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  }
+  .besiktas-caption {
+    text-align: center;
+    font-size: 0.95rem;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+    color: white;
+    margin-top: 0.5rem;
+  }
+
+
+  .cocukluk-corner {
+    position: fixed;
+    bottom: 30px;
+    left: 120px;
+    z-index: 999;
+    text-align: center;
+  }
+  .cocukluk-wrapper {
+    display: flex;
+    gap: 6px;
+  }
+  .cocukluk-wrapper img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  .cocuk-caption {
+    font-size: 0.85rem;
+    font-family: 'Libre Baskerville', serif;
+    color: white;
+    font-weight: bold;
+    margin-top: 0.4rem;
+  }
+
+
+
+@keyframes fall {
+  0% { transform: translateY(-100px) scale(1); opacity: 1; }
+  100% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+}
+
+.heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+
+@keyframes fall {
+  0% { transform: translateY(-100px) scale(1); opacity: 1; }
+  100% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+}
+
+.heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+
+
+  100% {
+    transform: translate(
+      calc(-50px + 100px * Math.random()),
+      calc(-100px + 200px * Math.random())
+    ) scale(0.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.8) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.8) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+</style>
+</head>
+<body>
+<!-- 🎁 Hediye kutusu -->
+
+<div class="map-banner">
+<img alt="Uzak mesafe haritası" src="images/harita.jpg"/>
+<div class="map-caption">
+<p class="main-line">Tüm engelleri aşacağız<br/>Kalbinden öperim kadın</p>
+<p class="sub-line">Mesafe dokunmaya engeldir, sevmeye değil ❤️</p>
+</div>
+</div>
+<div class="letter-section">
+<img alt="Mektubu Aç" id="envelope" src="images/envelope.png"/>
+<div id="letter">Hazal nası başlayacağımı bilmiyorum dümdüz gireceğim konuya seni çok seviyorum birbirimize karşı hatalarımız oldu her şeyi aşarız bi ölümün çaresi yok ben hep seninleyim hep el ele bunları aştık hepte böyle olmasını temenni ediyorum yanında olmayı çok istiyorum biliyorum olacak halledeceğiz mus mutlu olacağız her ne olursa olsun seni mutlu etmek için elimden geleni yapacağım keşke maddi durumum daha iyi olsaydı her istediğini yapabilsem alabilsem şu istediğin pandora mesala alamayacak olmam içime çok dert oluyor kendime kızıyorum biliyorum bu senin için büyük bir sorun değil ama olsada mutlu olurdun biliyorum söz ilk fırsatta alacağım zoruma gidiyor bu durum açıkçası her neyse bu konuda uzatmaya devam edersem bana kızacağını biliyorum şimdi gelelim asıl konuya bazı şeyleri ilk yaşayamadık evet yaşadığımız ilklerse paha biçilmez bazı konularda ilkin olamadığım için özür diliyorum her konuda sonun olacağıma söz veriyorum tam doğum gününde yanında olmak isterdim olamayacak bu yinede bundan sonraki tüm doğum günlerimizi birlikte geçireceğiz seni kocaman öpüyorum doğum günün kutlu olsun hayatımın anlamı hep mutlu ol hep mutlu olalım öpüyorummmm ❤️😘💋🦋🌹✨🍒💌🩵💙💞❤️‍🔥🎂🎂🎂</div>
+</div>
+<script>
+  const envelope = document.getElementById('envelope');
+  const letter = document.getElementById('letter');
+  envelope.addEventListener('click', () => {
+    envelope.classList.toggle('open');
+    letter.classList.toggle('show');
+  });
+</script>
+<section class="gallery">
+
+
+<div class="top-image">
+<img alt="El ele Atatürk önünde" src="images/slider_header.jpg">
+<p class="caption">Seninle bu yolda el ele… hem aşkla hem gururla, bir ömür Atatürk'ün izinde, birbirimizin kalbinde.</p>
+</img></div>
+<!-- SLIDERLAR -->
+
+
+
+
+
+
+
+
+<!-- Butonlu Slider - grup1 -->
+<div class="slider-group" style="text-align: center; margin-bottom: 40px;">
+    <div id="grup1-container" style="position: relative; max-width: 500px; margin: auto;">
+        <img id="grup1-image" src="images/grup1_1.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
+        <button onclick="prev_grup1()" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+        <button onclick="next_grup1()" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+    </div>
+    <p class="note">Süslü Hatunum</p>
+</div>
+
+<!-- Butonlu Slider - grup2 -->
+<div class="slider-group" style="text-align: center; margin-bottom: 40px;">
+    <div id="grup2-container" style="position: relative; max-width: 500px; margin: auto;">
+        <img id="grup2-image" src="images/grup2_1.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
+        <button onclick="prev_grup2()" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+        <button onclick="next_grup2()" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+    </div>
+    <p class="note">Ellerinden bir dahaki içeceğim kahveyi iple çekiyorum mutfak fatihi prensesim</p>
+</div>
+
+<!-- Butonlu Slider - grup3 -->
+<div class="slider-group" style="text-align: center; margin-bottom: 40px;">
+    <div id="grup3-container" style="position: relative; max-width: 500px; margin: auto;">
+        <img id="grup3-image" src="images/grup3_1.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
+        <button onclick="prev_grup3()" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+        <button onclick="next_grup3()" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+    </div>
+    <p class="note">Senle olan anlardaki huzur paha biçilemez</p>
+</div>
+
+<!-- Butonlu Slider - grup4 -->
+<div class="slider-group" style="text-align: center; margin-bottom: 40px;">
+    <div id="grup4-container" style="position: relative; max-width: 500px; margin: auto;">
+        <img id="grup4-image" src="images/grup4_1.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
+        <button onclick="prev_grup4()" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+        <button onclick="next_grup4()" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+    </div>
+    <p class="note">Uyuyan güzelimm</p>
+</div>
+
+<!-- Butonlu Slider - grup5 -->
+<div class="slider-group" style="text-align: center; margin-bottom: 40px;">
+    <div id="grup5-container" style="position: relative; max-width: 500px; margin: auto;">
+        <img id="grup5-image" src="images/grup5_1.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
+        <button onclick="prev_grup5()" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+        <button onclick="next_grup5()" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+    </div>
+    <p class="note">Gözlerindeki mutluluğu izlemek bana yetiyor… Hep öyle kal kadın</p>
+</div>
+
+<!-- Butonlu Slider - grup6 -->
+<div class="slider-group" style="text-align: center; margin-bottom: 40px;">
+    <div id="grup6-container" style="position: relative; max-width: 500px; margin: auto;">
+        <img id="grup6-image" src="images/grup6_1.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
+        <button onclick="prev_grup6()" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+        <button onclick="next_grup6()" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+    </div>
+    <p class="note">Sen gülünce dünya susuyor, sadece biz kalıyoruz…</p>
+</div>
+
+<!-- Butonlu Slider - grup7 -->
+<div class="slider-group" style="text-align: center; margin-bottom: 40px;">
+    <div id="grup7-container" style="position: relative; max-width: 500px; margin: auto;">
+        <img id="grup7-image" src="images/grup7_1.jpg" style="width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"/>
+        <button onclick="prev_grup7()" style="position: absolute; top: 50%; left: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+        <button onclick="next_grup7()" style="position: absolute; top: 50%; right: -30px; transform: translateY(-50%); font-size: 24px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+    </div>
+    <p class="note">Tipini yerim ouuuğğğğğlllllll…</p>
+</div>
+
+<div class="childhood-section">
+  <div class="childhood-images">
+    <img src="img_boy.jpg" alt="Faruk çocukluk">
+    <img src="img_girl.jpg" alt="Hazal çocukluk">
+  </div>
+  <div class="childhood-caption">
+    <p>+Siz anlaşamazsınız<br>-O sırada bizim çocukluk kombinleri</p>
+  </div>
+</div>
+
+<style>
+.childhood-section {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.childhood-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+.childhood-images img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+}
+.childhood-caption {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: pre-line;
+}
+</style>
+<div class="bottom-image">
+<img alt="El ele gül" src="images/final_footer.jpg"/>
+<p class="caption">Bu elde bir söz var: Ne olursa olsun bırakmayacağım… Gül senin, el senin… ben zaten hep seninim.</p>
+</div>
+<div class="besiktas-section">
+  <div class="besiktas-images">
+    <div class="besiktas-item">
+      <img src="img_besiktas1.jpg" alt="Var bi hayalimiz">
+      <p class="besiktas-caption">Var bi hayalimiz</p>
+<div class="besiktas-img-alone"><img src="img_besiktas3.jpg" alt="Vodafone Düğün"></div>
+<div class="besiktas-img-alone"><img src="img_besiktas5.jpg" alt="BJK Aile"></div>
+    </div>
+    <div class="besiktas-item">
+      <img src="img_besiktas2.jpg" alt="Siyahıma beyaz olduğun gün...">
+      <p class="besiktas-caption">Siyahıma Beyaz olduğun gün kalbimiz birlikte atmaya başladı</p>
+<div class="besiktas-img-alone"><img src="img_besiktas4.jpg" alt="BJK Kalp"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+.besiktas-section {
+  text-align: center;
+  margin: 40px 0;
+}
+.besiktas-images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.besiktas-item {
+  max-width: 300px;
+}
+.besiktas-item img {
+  width: 100%;
+  border-radius: 12px;
+}
+.besiktas-caption {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+</style>
+
+<!-- Video Bölümü -->
+<div id="video-card" style="margin: 60px auto; max-width: 600px; background: #1a1a2e; border-radius: 20px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.4); position: relative;">
+    <video id="romanticVideo" style="width: 100%; display: none;" playsinline muted>
+        <source src="videos/hazal_video.mp4" type="video/mp4">
+        Tarayıcınız video etiketini desteklemiyor.
+    </video>
+    
+</div>
+
+<script>
+    const overlay = document.getElementById('playOverlay');
+    const video = document.getElementById('romanticVideo');
+
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+    });
+</script>
+
+</section>
+<audio id="bg-music" src="music.mp3"></audio>
+<source src="audio.mp3" type="audio/mp3"/>
+</audio>
+<script>
+  const audio = document.getElementById("bgMusic");
+  audio.volume = 0.5;
+  audio.addEventListener("loadedmetadata", () => {
+    audio.currentTime = 30;
+    audio.play().catch(() => {});
+  });
+</script>
+
+
+
+</div>
+<script>
+  const heartContainer = document.createElement("div");
+  heartContainer.className = "heart-container";
+  document.body.appendChild(heartContainer);
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+    heartContainer.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }
+
+  document.getElementById('envelope').addEventListener('click', () => {
+    const interval = setInterval(createHeart, 100); // Daha sık kalp üretimi
+    setTimeout(() => clearInterval(interval), 10000);
+  });
+</script>
+
+<script>
+  let audio = document.getElementById("bg-music");
+  const giftBox = document.getElementById("gift-box");
+
+  let isPlaying = false;
+
+  giftBox.addEventListener("click", () => {
+    if (!audio) {
+      audio = document.getElementById("bg-music");
+    }
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.currentTime = 30;
+      audio.play();
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
+
+
+<!-- removed -->
+<div id="video-card" style="margin: 60px auto; max-width: 600px; background: #1a1a2e; border-radius: 20px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.4); position: relative;">
+    <video id="romanticVideo" style="width: 100%; display: none;" playsinline muted>
+        <source src="videos/hazal_video.mp4" type="video/mp4">
+        Tarayıcınız video etiketini desteklemiyor.
+    </video>
+    
+</div>
+
+<script>
+    const overlay = document.getElementById('playOverlay');
+    const video = document.getElementById('romanticVideo');
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        video.style.display = 'block';
+        video.play();
+    });
+</script>
+
+
+
+<div style="margin: 40px auto; max-width: 400px; border-radius: 20px; overflow: hidden;">
+    <video style="width: 100%; border-radius: 20px;" playsinline muted autoplay loop>
+        <source src="videos/hazal_video.mp4" type="video/mp4">
+        Tarayıcınız video etiketini desteklemiyor.
+    </video>
+    <p style="text-align: center; font-size: 1.1em; color: white; margin-top: 10px; font-family: 'Georgia', serif;">
+        Dudaklarını dudaklarıma mühürledim yarim
+    </p>
+</div>
+<script>
+const grup1Images = ["images/grup1_1.jpg", "images/grup1_2.jpg", "images/grup1_3.jpg", "images/grup1_4.jpg"];
+let grup1Index = 0;
+function show_grup1(index) {
+    const img = document.getElementById("grup1-image");
+    img.src = grup1Images[index];
+}
+function prev_grup1() {
+    grup1Index = (grup1Index - 1 + grup1Images.length) % grup1Images.length;
+    show_grup1(grup1Index);
+}
+function next_grup1() {
+    grup1Index = (grup1Index + 1) % grup1Images.length;
+    show_grup1(grup1Index);
+}
+
+const grup2Images = ["images/grup2_1.jpg", "images/grup2_2.jpg", "images/grup2_3.jpg", "images/grup2_4.jpg", "images/grup2_5.jpg"];
+let grup2Index = 0;
+function show_grup2(index) {
+    const img = document.getElementById("grup2-image");
+    img.src = grup2Images[index];
+}
+function prev_grup2() {
+    grup2Index = (grup2Index - 1 + grup2Images.length) % grup2Images.length;
+    show_grup2(grup2Index);
+}
+function next_grup2() {
+    grup2Index = (grup2Index + 1) % grup2Images.length;
+    show_grup2(grup2Index);
+}
+
+const grup3Images = ["images/grup3_1.jpg", "images/grup3_2.jpg", "images/grup3_3.jpg", "images/grup3_4.jpg", "images/grup3_5.jpg"];
+let grup3Index = 0;
+function show_grup3(index) {
+    const img = document.getElementById("grup3-image");
+    img.src = grup3Images[index];
+}
+function prev_grup3() {
+    grup3Index = (grup3Index - 1 + grup3Images.length) % grup3Images.length;
+    show_grup3(grup3Index);
+}
+function next_grup3() {
+    grup3Index = (grup3Index + 1) % grup3Images.length;
+    show_grup3(grup3Index);
+}
+
+const grup4Images = ["images/grup4_1.jpg", "images/grup4_2.jpg", "images/grup4_3.jpg"];
+let grup4Index = 0;
+function show_grup4(index) {
+    const img = document.getElementById("grup4-image");
+    img.src = grup4Images[index];
+}
+function prev_grup4() {
+    grup4Index = (grup4Index - 1 + grup4Images.length) % grup4Images.length;
+    show_grup4(grup4Index);
+}
+function next_grup4() {
+    grup4Index = (grup4Index + 1) % grup4Images.length;
+    show_grup4(grup4Index);
+}
+
+const grup5Images = ["images/grup5_1.jpg", "images/grup5_2.jpg", "images/grup5_3.jpg", "images/grup5_4.jpg", "images/grup5_5.jpg", "images/grup5_6.jpg", "images/grup5_7.jpg", "images/grup5_8.jpg", "images/grup5_9.jpg", "images/grup5_10.jpg"];
+let grup5Index = 0;
+function show_grup5(index) {
+    const img = document.getElementById("grup5-image");
+    img.src = grup5Images[index];
+}
+function prev_grup5() {
+    grup5Index = (grup5Index - 1 + grup5Images.length) % grup5Images.length;
+    show_grup5(grup5Index);
+}
+function next_grup5() {
+    grup5Index = (grup5Index + 1) % grup5Images.length;
+    show_grup5(grup5Index);
+}
+
+const grup6Images = ["images/grup6_1.jpg", "images/grup6_2.jpg", "images/grup6_3.jpg", "images/grup6_4.jpg", "images/grup6_5.jpg", "images/grup6_6.jpg", "images/grup6_7.jpg"];
+let grup6Index = 0;
+function show_grup6(index) {
+    const img = document.getElementById("grup6-image");
+    img.src = grup6Images[index];
+}
+function prev_grup6() {
+    grup6Index = (grup6Index - 1 + grup6Images.length) % grup6Images.length;
+    show_grup6(grup6Index);
+}
+function next_grup6() {
+    grup6Index = (grup6Index + 1) % grup6Images.length;
+    show_grup6(grup6Index);
+}
+
+const grup7Images = ["images/grup7_1.jpg", "images/grup7_2.jpg", "images/grup7_3.jpg"];
+let grup7Index = 0;
+function show_grup7(index) {
+    const img = document.getElementById("grup7-image");
+    img.src = grup7Images[index];
+}
+function prev_grup7() {
+    grup7Index = (grup7Index - 1 + grup7Images.length) % grup7Images.length;
+    show_grup7(grup7Index);
+}
+function next_grup7() {
+    grup7Index = (grup7Index + 1) % grup7Images.length;
+    show_grup7(grup7Index);
+}
+</script>
+</body>
+</html>
+
+
+<div class="besiktas-section">
+  <div class="besiktas-images">
+    
+    
+  </div>
+</div>
