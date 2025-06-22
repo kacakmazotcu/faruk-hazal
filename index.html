@@ -506,7 +506,6 @@ body {
 </script>
 
 </section>
-<audio id="bg-music" src="music.mp3"></audio>
 <source src="audio.mp3" type="audio/mp3"/>
 </audio>
 <script>
@@ -700,8 +699,11 @@ function next_grup7() {
     show_grup7(grup7Index);
 }
 </script>
-  <audio id="music" src="audio.mp3"></audio>
-  <button id="surpriseButton" style="position: fixed; bottom: 20px; right: 20px; z-index: 999;">🎵</button>
+
+<audio id="music" controls style="display: block; position: fixed; bottom: 20px; right: 20px; z-index: 999;">
+  <source src="audio.mp3" type="audio/mpeg">
+  Tarayıcınız ses öğesini desteklemiyor.
+</audio>
 </body>
 </html>
 
