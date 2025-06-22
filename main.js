@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btn && audio) {
         btn.addEventListener("click", function () {
             if (audio.paused) {
+                audio.currentTime = 30; // Start from 30 seconds
                 audio.play();
             } else {
                 audio.pause();
